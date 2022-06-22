@@ -1,4 +1,4 @@
-name: 'Lift Branch Protection'
+name: 'Branch Protection Lifter'
 description: 'Lift Branch Protection for a workflow run'
 author: 'LEDBrain <opensource@ledbrain.de>'
 branding:
