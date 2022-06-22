@@ -1,0 +1,21 @@
+name: 'Lift Branch Protection'
+description: 'Lift Branch Protection for a workflow run'
+author: 'LEDBrain <opensource@ledbrain.de>'
+branding:
+    icon: git-branch
+    color: red
+
+inputs:
+    token:
+        description: 'GitHub PAT'
+        required: true
+    branch:
+        description: 'Branch to lift the restrictions on'
+        default: main
+#outputs:
+#    success:
+#        description: 'succeeded'
+runs:
+    using: 'node16'
+    main: 'dist/index.js'
+    post: 'dist/index.js'
