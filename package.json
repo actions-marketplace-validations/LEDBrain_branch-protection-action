@@ -1,6 +1,6 @@
 {
     "name": "branch-protection-action",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A tool to remove branch protection for a workflow run",
     "main": "index.js",
     "scripts": {

@@ -9091,7 +9091,7 @@ async function run() {
                                           (t) => t?.slug
                                       ) || [],
                               }
-                            : null,
+                            : undefined,
                         dismiss_stale_reviews:
                             initState.required_pull_request_reviews
                                 ?.dismiss_stale_reviews || false,
@@ -9118,7 +9118,7 @@ async function run() {
                                           (a) => a?.slug
                                       ) || [],
                               }
-                            : null,
+                            : undefined,
                     },
 
                     required_signatures:
@@ -9160,7 +9160,7 @@ async function run() {
             core.debug(updatedState.data);
         }
     } catch (error) {
-        if (error.code === 404 && error.message === 'Branch not protected') {
+        if (error.status === 404 && error.message === 'Branch not protected') {
             core.notice('Branch not protected');
             core.saveState('STATE_branch-protection-has-run', null);
         } else {
