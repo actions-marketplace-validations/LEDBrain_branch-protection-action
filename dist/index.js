@@ -9160,7 +9160,6 @@ async function run() {
             core.debug(updatedState.data);
         }
     } catch (error) {
-        core.debug(error);
         if (error.code === 404 && error.message === 'Branch not protected') {
             core.notice('Branch not protected');
             core.saveState('STATE_branch-protection-has-run', null);

@@ -5,7 +5,7 @@ This template includes tests, linting, a validation workflow, publishing, and ve
 ## Usage
 
 ```yaml
-uses: LEDBrain/branch-protection-action@v1.0.1
+uses: LEDBrain/branch-protection-action@v1.0.2
 with:
     # Optional: branch to lift the restriction on; defaults to the current branch
     branch: main
