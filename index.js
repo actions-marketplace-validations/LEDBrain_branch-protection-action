@@ -21,7 +21,7 @@ async function run() {
             const branch = core.getInput('branch', { required: true }),
                 owner = context.repo.owner,
                 repo = context.repo.repo;
-            core.debug(branch, owner, repo);
+            core.debug(`${branch}, ${owner}, ${repo}`);
 
             const { data: state } =
                 await octokit.rest.repos.getBranchProtection({
@@ -56,7 +56,7 @@ async function run() {
             const branch = core.getInput('branch', { required: true }),
                 owner = context.repo.owner,
                 repo = context.repo.repo;
-            core.debug(branch, owner, repo);
+            core.debug(`${branch}, ${owner}, ${repo}`);
 
             const initState = JSON.parse(
                 core.getState('STATE_initial-branch-protection')
@@ -155,7 +155,7 @@ async function run() {
                         // contexts:
                         //     initState.required_status_checks?.contexts || [],
                         checks:
-                            initState.required_status_checks?.checks.map(
+                            initState.required_status_checks?.checks?.map(
                                 (c) => ({
                                     context: c?.context,
                                     app_id: c?.app_id,
@@ -163,7 +163,8 @@ async function run() {
                             ) || undefined,
                     },
                 });
-            core.debug(updatedState);
+            core.debug(`Status: ${updatedState.status}`);
+            core.debug(updatedState.data);
         }
     } catch (error) {
         core.debug(error);
