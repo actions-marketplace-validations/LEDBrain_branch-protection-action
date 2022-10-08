@@ -1,3 +1,8 @@
+# ⚠ Deprecation Notice ⚠
+> This is being deprecated in favor of using [tibdex/github-app-token](https://github.com/tibdex/github-app-token) with [stefanzweifel/git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action)
+
+<br /><br />
+
 # Branch Protection Action
 
 This template includes tests, linting, a validation workflow, publishing, and versioning guidance.
